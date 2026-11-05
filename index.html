@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Presentación visual del catálogo de accesorios para celulares y registro de precios.">
+  <title>Catálogo | Accesorios para celular</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172033;
+      --muted: #64748b;
+      --line: #e2e8f0;
+      --brand: #5b4bdb;
+      --brand-dark: #4338ca;
+      --surface: #ffffff;
+      --back: #f5f6fb;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--back); color: var(--ink); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    header { background: linear-gradient(125deg, #201b55, #5143bd 62%, #8575f2); color: white; padding: 48px max(22px, calc((100% - 1120px)/2)) 42px; }
+    .eyebrow { text-transform: uppercase; letter-spacing: .16em; font-size: .73rem; font-weight: 800; opacity: .78; }
+    h1 { margin: 12px 0 10px; font-size: clamp(2rem, 5vw, 3.25rem); line-height: 1.05; }
+    header p { margin: 0; max-width: 650px; line-height: 1.65; color: #e4e1ff; }
+    main { max-width: 1120px; margin: auto; padding: 28px 22px 64px; }
+    .notice { display: flex; gap: 12px; align-items: flex-start; background: #fff8e6; border: 1px solid #f4d98d; color: #72510c; border-radius: 12px; padding: 14px 16px; margin-bottom: 28px; font-size: .92rem; line-height: 1.5; }
+    .notice strong { white-space: nowrap; }
+    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 14px; margin: 34px 0 16px; }
+    h2 { font-size: 1.35rem; margin: 0; }
+    .section-heading p { color: var(--muted); margin: 5px 0 0; font-size: .9rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
+    .card { overflow: hidden; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 4px 14px #1e293b0a; transition: transform .18s ease, box-shadow .18s ease; }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px #1e293b12; }
+    .visual { height: 145px; display: grid; place-items: center; background: linear-gradient(145deg, #edeaff, #f7f6ff); font-size: 3.7rem; }
+    .card:nth-child(3n+2) .visual { background: linear-gradient(145deg, #e5f4ff, #f3faff); }
+    .card:nth-child(3n) .visual { background: linear-gradient(145deg, #e5f8f0, #f4fcf8); }
+    .details { padding: 16px; }
+    .tag { display: inline-block; color: var(--brand-dark); background: #efedff; border-radius: 999px; padding: 5px 9px; font-size: .7rem; font-weight: 750; }
+    h3 { font-size: 1rem; margin: 11px 0 4px; }
+    .model { color: var(--muted); font-size: .87rem; margin: 0; min-height: 40px; line-height: 1.45; }
+    .compat { border-top: 1px solid var(--line); margin-top: 13px; padding-top: 11px; color: var(--muted); font-size: .78rem; }
+    .price-row { display: flex; justify-content: space-between; align-items: center; margin-top: 13px; }
+    .price-label { color: var(--muted); font-size: .8rem; }
+    .price { color: var(--brand-dark); font-weight: 850; font-size: 1.05rem; }
+    .catalog-note { margin: 30px 0 0; color: var(--muted); font-size: .85rem; text-align: center; }
+    footer { border-top: 1px solid var(--line); text-align: center; padding: 22px; color: var(--muted); font-size: .82rem; }
+    @media (max-width: 540px) { header { padding-top: 36px; } .notice { display: block; } .notice strong { display: block; margin-bottom: 4px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="eyebrow">Catálogo de tienda</div>
+    <h1>Accesorios para celular</h1>
+    <p>Modelos de referencia para presentar productos y organizar precios. Elige la compatibilidad exacta del equipo antes de cotizar o vender.</p>
+  </header>
+  <main>
+    <aside class="notice"><strong>Precios pendientes de captura</strong><span>Los importes no se especificaron. Cada tarjeta muestra “Por registrar” para evitar publicar precios inventados. Registra el precio real, moneda, proveedor y fecha en <code>catalogo_precios.sql</code>.</span></aside>
+
+    <section aria-labelledby="fundas">
+      <div class="section-heading"><div><h2 id="fundas">Fundas, cases y forros</h2><p>Protección y estilos para diferentes modelos de celular.</p></div></div>
+      <div class="grid">
+        <article class="card"><div class="visual" aria-hidden="true">📱</div><div class="details"><span class="tag">Silicona / TPU</span><h3>Funda transparente reforzada</h3><p class="model">Case transparente con bordes antiimpacto.</p><div class="compat">Compatibilidad: marca y modelo específico</div><div class="price-row"><span class="price-label">Precio</span><span class="price">Por registrar</span></div></div></article>
+        <article class="card"><div class="visual" aria-hidden="true">🎨</div><div class="details"><span class="tag">Silicona</span><h3>Forro de silicona lisa</h3><p class="model">Funda flexible, interior suave y colores variados.</p><div class="compat">Compatibilidad: marca y modelo específico</div><div class="price-row"><span class="price-label">Precio</span><span class="price">Por registrar</span></div></div></article>
+        <article class="card"><div class="visual" aria-hidden="true">🛡️</div><div class="details"><span class="tag">Uso rudo</span><h3>Case rugged antigolpes</h3><p class="model">TPU y policarbonato con esquinas reforzadas.</p><div class="compat">Compatibilidad: marca y modelo específico</div><div class="price-row"><span class="price-label">Precio</span><span class="price">Por registrar</span></div></div></article>
+        <article class="card"><div class="visual" aria-hidden="true">📔</div><div class="details"><span class="tag">Tipo cartera</span><h3>Funda folio</h3><p class="model">Cubierta frontal con espacios para tarjetas.</p><div class="compat">Compatibilidad: marca y modelo específico</div><div class="price-row"><span class="price-label">Precio</span><span class="price">Por registrar</span></div></div></article>
+      </div>
+    </section>
+
+    <section aria-labelledby="pantalla">
+      <div class="section-heading"><div><h2 id="pantalla">Protectores de pantalla</h2><p>Vidrios templados y micas para distintos tipos de pantalla.</p></div></div>
+      <div class="grid">
+        <article class="card"><div class="visual" aria-hidden="true">✨</div><div class="details"><span class="tag">Vidrio templado</span><h3>Protector 9H</h3><p class="model">Protector estándar para pantalla.</p><div class="compat">Compatibilidad: medidas del equipo</div><div class="price-row"><span class="price-label">Precio</span><span class="price">Por registrar</span></div></div></article>
+        <article class="card"><div class="visual" aria-hidden="true">📐</div><div class="details"><span class="tag">Cobertura completa</span><h3>Vidrio full cover</h3><p class="model">Cobertura de borde a borde; validar forma y sensores.</p><div class="compat">Compatibilidad: medidas del equipo</div><div class="price-row"><span class="price-label">Precio</span><span class="price">Por registrar</span></div></div></article>
+        <article class="card"><div class="visual" aria-hidden="true">💧</div><div class="details"><span class="tag">Hidrogel</span><h3>Mica flexible transparente</h3><p class="model">Película flexible para pantallas planas o curvas.</p><div class="compat">Compatibilidad: marca y modelo específico</div><div class="price-row"><span class="price-label">Precio</span><span class="price">Por registrar</span></div></div></article>
+        <article class="card"><div class="visual" aria-hidden="true">🔒</div><div class="details"><span class="tag">Privacidad</span><h3>Vidrio privacidad 9H</h3><p class="model">Reduce la visibilidad lateral de la pantalla.</p><div class="compat">Compatibilidad: medidas del equipo</div><div class="price-row"><span class="price-label">Precio</span><span class="price">Por registrar</span></div></div></article>
+      </div>
+    </section>
+
+    <section aria-labelledby="proteccion">
+      <div class="section-heading"><div><h2 id="proteccion">Accesorios de protección</h2><p>Complementos para el uso diario y el transporte del equipo.</p></div></div>
+      <div class="grid">
+        <article class="card"><div class="visual" aria-hidden="true">🌧️</div><div class="details"><span class="tag">Impermeable</span><h3>Bolsa estanca para celular</h3><p class="model">Funda sellada para reducir exposición a agua y polvo.</p><div class="compat">Compatibilidad: universal, revisar dimensiones</div><div class="price-row"><span class="price-label">Precio</span><span class="price">Por registrar</span></div></div></article>
+        <article class="card"><div class="visual" aria-hidden="true">🪢</div><div class="details"><span class="tag">Correa</span><h3>Cordón ajustable</h3><p class="model">Correa de mano o cuello con anclaje compatible.</p><div class="compat">Compatibilidad: verificar funda y anclaje</div><div class="price-row"><span class="price-label">Precio</span><span class="price">Por registrar</span></div></div></article>
+        <article class="card"><div class="visual" aria-hidden="true">🔌</div><div class="details"><span class="tag">Antipolvo</span><h3>Protectores de puertos</h3><p class="model">Juego de tapones de silicona para conectores.</p><div class="compat">Compatibilidad: tipo de puerto</div><div class="price-row"><span class="price-label">Precio</span><span class="price">Por registrar</span></div></div></article>
+      </div>
+    </section>
+
+    <section aria-labelledby="energia">
+      <div class="section-heading"><div><h2 id="energia">Carga y energía</h2><p>Cargadores, cables y baterías externas.</p></div></div>
+      <div class="grid">
+        <article class="card"><div class="visual" aria-hidden="true">⚡</div><div class="details"><span class="tag">USB-C · 20 W</span><h3>Cargador de pared rápido</h3><p class="model">Adaptador USB-C; cable se vende por separado.</p><div class="compat">Compatibilidad: protocolo de carga del dispositivo</div><div class="price-row"><span class="price-label">Precio</span><span class="price">Por registrar</span></div></div></article>
+        <article class="card"><div class="visual" aria-hidden="true">🔋</div><div class="details"><span class="tag">10 000 mAh</span><h3>Batería externa</h3><p class="model">Power bank portátil; confirmar potencia y puertos.</p><div class="compat">Compatibilidad: USB-A / USB-C según versión</div><div class="price-row"><span class="price-label">Precio</span><span class="price">Por registrar</span></div></div></article>
+        <article class="card"><div class="visual" aria-hidden="true">〰️</div><div class="details"><span class="tag">Carga inalámbrica</span><h3>Base Qi 15 W</h3><p class="model">Base inalámbrica; potencia sujeta al equipo compatible.</p><div class="compat">Compatibilidad: carga Qi</div><div class="price-row"><span class="price-label">Precio</span><span class="price">Por registrar</span></div></div></article>
+        <article class="card"><div class="visual" aria-hidden="true">🔗</div><div class="details"><span class="tag">Carga y datos</span><h3>Cable USB-C a USB-C</h3><p class="model">Cable de 1 m; verificar potencia máxima.</p><div class="compat">Compatibilidad: conectores USB-C</div><div class="price-row"><span class="price-label">Precio</span><span class="price">Por registrar</span></div></div></article>
+      </div>
+    </section>
+
+    <section aria-labelledby="audio">
+      <div class="section-heading"><div><h2 id="audio">Audio y conectividad</h2><p>Opciones inalámbricas y adaptadores de audio.</p></div></div>
+      <div class="grid">
+        <article class="card"><div class="visual" aria-hidden="true">🎧</div><div class="details"><span class="tag">Bluetooth</span><h3>Audífonos TWS</h3><p class="model">Audífonos inalámbricos con estuche de carga.</p><div class="compat">Compatibilidad: Bluetooth</div><div class="price-row"><span class="price-label">Precio</span><span class="price">Por registrar</span></div></div></article>
+        <article class="card"><div class="visual" aria-hidden="true">🔊</div><div class="details"><span class="tag">Altavoz portátil</span><h3>Bocina Bluetooth compacta</h3><p class="model">Bocina recargable; confirmar potencia y autonomía.</p><div class="compat">Compatibilidad: Bluetooth</div><div class="price-row"><span class="price-label">Precio</span><span class="price">Por registrar</span></div></div></article>
+        <article class="card"><div class="visual" aria-hidden="true">🎵</div><div class="details"><span class="tag">Adaptador</span><h3>USB-C a audio 3.5 mm</h3><p class="model">Adaptador para audífonos con conector auxiliar.</p><div class="compat">Compatibilidad: USB-C y soporte de audio</div><div class="price-row"><span class="price-label">Precio</span><span class="price">Por registrar</span></div></div></article>
+      </div>
+    </section>
+
+    <section aria-labelledby="soportes">
+      <div class="section-heading"><div><h2 id="soportes">Complementos y soportes</h2><p>Soluciones prácticas para escritorio, automóvil y fotografía.</p></div></div>
+      <div class="grid">
+        <article class="card"><div class="visual" aria-hidden="true">🧍</div><div class="details"><span class="tag">Escritorio</span><h3>Base ajustable para celular</h3><p class="model">Soporte de mesa con ángulo ajustable.</p><div class="compat">Compatibilidad: universal, verificar tamaño</div><div class="price-row"><span class="price-label">Precio</span><span class="price">Por registrar</span></div></div></article>
+        <article class="card"><div class="visual" aria-hidden="true">🚘</div><div class="details"><span class="tag">Automóvil</span><h3>Soporte para rejilla</h3><p class="model">Montaje para sujetar el celular durante el viaje.</p><div class="compat">Compatibilidad: universal, verificar dimensiones</div><div class="price-row"><span class="price-label">Precio</span><span class="price">Por registrar</span></div></div></article>
+        <article class="card"><div class="visual" aria-hidden="true">📸</div><div class="details"><span class="tag">Fotografía</span><h3>Mini tripié flexible</h3><p class="model">Trípode compacto con pinza para celular.</p><div class="compat">Compatibilidad: revisar pinza y rosca</div><div class="price-row"><span class="price-label">Precio</span><span class="price">Por registrar</span></div></div></article>
+        <article class="card"><div class="visual" aria-hidden="true">👌</div><div class="details"><span class="tag">Agarre</span><h3>Anillo de soporte</h3><p class="model">Accesorio adhesivo trasero para agarre y apoyo.</p><div class="compat">Compatibilidad: considerar carga inalámbrica</div><div class="price-row"><span class="price-label">Precio</span><span class="price">Por registrar</span></div></div></article>
+      </div>
+    </section>
+    <p class="catalog-note">Los nombres y especificaciones son modelos de referencia. Confirma existencias, compatibilidad y características con el proveedor antes de publicar.</p>
+  </main>
+  <footer>Catálogo inicial de accesorios · Precios sujetos a captura y actualización</footer>
+</body>
+</html>

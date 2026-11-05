@@ -1,21 +1,25 @@
 # Catálogo y base de datos de precios
 
-Base inicial en SQLite para organizar productos y registrar sus precios en una moneda y fecha determinadas.
+Este repositorio contiene una base inicial en SQLite para organizar productos y registrar sus precios en una moneda y fecha determinadas, además de una presentación visual de los modelos.
 
-## Contenido
+## Presentación visual
+
+Abre [`index.html`](index.html) en un navegador para ver el catálogo por categorías, con tarjetas de producto, modelo, material o tipo y compatibilidad. Los precios aparecen como **“Por registrar”** porque no se indicó país, moneda ni lista de proveedores; no se inventaron cotizaciones.
+
+## Base de datos
 
 - `catalogo_precios.sql`: crea las tablas `categorias`, `productos` y `precios`, e incluye un catálogo inicial de modelos/tipos de accesorios.
-- Los precios no se precargan porque no se indicó país, moneda ni lista de proveedores. Añade cada precio en `precios`; así puedes conservar cambios históricos sin sobrescribir los anteriores.
+- La tabla `precios` conserva el historial: registra un nuevo precio cuando cambie en lugar de reemplazar el anterior.
 
-## Cómo usarlo
+### Crear la base de datos
 
-Con SQLite instalado, crea la base de datos ejecutando:
+Con SQLite instalado, ejecuta:
 
 ```bash
 sqlite3 tienda.db < catalogo_precios.sql
 ```
 
-Para consultar el catálogo con el precio más reciente registrado por producto:
+### Consultar el catálogo con el precio más reciente
 
 ```sql
 SELECT c.nombre AS categoria, p.nombre AS producto, p.modelo,
@@ -31,11 +35,13 @@ LEFT JOIN precios pr ON pr.id = (
 ORDER BY c.nombre, p.nombre;
 ```
 
-Para agregar un precio, sustituye `1` por el ID del producto y completa precio, moneda y proveedor (si aplica):
+### Registrar un precio
+
+Sustituye `1` por el ID real del producto e indica precio, moneda y proveedor cuando aplique:
 
 ```sql
 INSERT INTO precios (producto_id, precio, moneda, proveedor, fecha_registro)
 VALUES (1, 199.00, 'MXN', 'Proveedor', date('now'));
 ```
 
-Los precios son ejemplos de formato, no cotizaciones; registra los importes reales de tu mercado y proveedor.
+El importe es solo un ejemplo de formato, no una cotización. Registra el valor real del mercado y proveedor local.
